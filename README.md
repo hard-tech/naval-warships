@@ -1,3 +1,8 @@
+# Prérequis
+
+Avant tout il faut tapper  `npm install` pour installer tout les modules puis tapper `npm start` à chaque fois pour lancer le site web.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
