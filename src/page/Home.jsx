@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import '../css/Home.css'
+import '../css/Home.css';
 
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';

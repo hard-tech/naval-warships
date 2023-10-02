@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import '../css/Game.css'
+import '../css/Game.css';
 
 export default class Game extends Component {
   render() {
