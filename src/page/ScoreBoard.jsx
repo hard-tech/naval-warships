@@ -8,7 +8,7 @@ export default class ScoreBoard extends Component {
       <div>
         <table>
           <tr>
-            <td className='' >Bonjour, je suis votre première cellule</td>
+            <td className='MyTable'>Bonjour, je suis votre première cellule Table 1</td>
             
             <td>Je suis 4ème</td>
           </tr>
