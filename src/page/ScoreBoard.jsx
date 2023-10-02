@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import '../css/ScoreBoard.css'
+
 export default class ScoreBoard extends Component {
   render() {
     return (
