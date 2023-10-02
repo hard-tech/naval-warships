@@ -10,7 +10,7 @@ export default class Home extends Component {
         <Nav />
           <center>
             <h1>Bataille Naval</h1>
-            <button>Start Game</button>
+            <button className="">Start Game</button>
           </center>
         <Footer />
       </div>
