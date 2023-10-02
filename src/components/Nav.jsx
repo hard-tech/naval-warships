@@ -6,7 +6,6 @@ export default class Nav extends Component {
       <nav>
         <ul>
           <li>Start</li>
-          <li>Stop</li>
         </ul>
       </nav>
     )
