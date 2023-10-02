@@ -3,9 +3,12 @@ import React, { Component } from 'react'
 export default class Nav extends Component {
   render() {
     return (
-      <div>
-        My Nav
-      </div>
+      <nav>
+        <ul>
+          <li>Start</li>
+          <li>Stop</li>
+        </ul>
+      </nav>
     )
   }
 }
