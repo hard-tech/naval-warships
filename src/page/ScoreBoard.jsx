@@ -9,8 +9,7 @@ export default class ScoreBoard extends Component {
         <table>
           <tr>
             <td className='' >Bonjour, je suis votre première cellule</td>
-            <td>je suis votre deuxième cellule</td>
-            <td>je suis votre troisième cellule</td>
+            
             <td>Je suis 4ème</td>
           </tr>
         </table>
