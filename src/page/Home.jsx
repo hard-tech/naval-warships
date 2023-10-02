@@ -8,7 +8,10 @@ export default class Home extends Component {
     return (
       <div>
         <Nav />
-          <h1>Hello world</h1>
+          <center>
+            <h1>Bataille Naval</h1>
+            <button>Start !</button>
+          </center>
         <Footer />
       </div>
     )
