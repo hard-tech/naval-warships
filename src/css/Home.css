@@ -1,3 +1,6 @@
 button{
     background-color: aqua;
 }
+body{
+    background: linear-gradient(to bottom,#98e0ff, #4537e9) no-repeat;
+}
