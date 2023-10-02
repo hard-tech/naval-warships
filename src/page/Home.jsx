@@ -8,7 +8,7 @@ export default class Home extends Component {
     return (
       <div>
         <Nav />
-          <h1>Hello world  !!!</h1>
+          <h1>Hello world and other world</h1>
         <Footer />
       </div>
     )
