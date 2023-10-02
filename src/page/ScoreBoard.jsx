@@ -12,6 +12,7 @@ export default class ScoreBoard extends Component {
             <td>je suis votre quatrième cellule</td>
           </tr>
         </table>
+        <h1>let's go!</h1>
       </div>
     )
   }
