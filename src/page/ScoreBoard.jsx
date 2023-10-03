@@ -6,7 +6,7 @@ export default class ScoreBoard extends Component {
   render() {
     return (
       <div>
-        <h1>let's go!</h1>
+        <h1>Score board</h1>
       </div>
     )
   }
