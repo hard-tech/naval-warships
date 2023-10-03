@@ -10,6 +10,6 @@ thead{
     border: 3px solid black;
 }
 td{
-    order-collapse: collapse;
+    border-collapse: collapse;
     border: 1px solid black;
 }
