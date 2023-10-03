@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "../css/Home.css";
 
-import FormConnect from '../components/FormConnect'
+import FormConnect from '../components/FormConnect';
 
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
