@@ -13,7 +13,7 @@ export default class Home extends Component {
         <Nav />
         <center>
           <h2>Bataille Naval !</h2>
-          <center>L'histoire de la Bataille Naval</center>
+          <center>L'histoire de la <a href="https://fr.wikipedia.org/wiki/Bataille_navale_(jeu)" target="blank">Bataille Naval</a></center>
           <p>La bataille navale, appelée aussi touché-coulé, est un jeu de société dans lequel deux joueurs doivent placer des navires sur une grille tenue secrète et tenter de toucher les navires adverses. Le gagnant est celui qui parvient à couler tous les navires de l'adversaire avant que tous les siens ne le soient. <br />
           La première version commerciale du jeu fut publiée en 1931 par la Starex Novelty Co. sous le nom de Salvo. Ce jeu est devenu populaire lors de son apparition en 1943 dans les publications américaines de divertissement de la Milton Bradley Company qui l'exploita sous la forme papier jusqu'en 1967, où elle sortit un jeu de plateau, puis en réalisa une version électronique en 1977.</p>
           <h2>Règles</h2>
