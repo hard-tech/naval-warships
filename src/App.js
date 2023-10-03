@@ -7,7 +7,6 @@ import ScoreBoard from './page/ScoreBoard';
 import {
   BrowserRouter,
   Route,
-  // Link,
   Routes
 } from "react-router-dom";
 
