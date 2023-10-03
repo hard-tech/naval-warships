@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 export default class Home extends Component {
   render() {
+    var SubmitForm, playCode, setPlayCode, playerName, setplayerName,playerNum, setplayerNum;
     return (
       <div>
         <Nav />
