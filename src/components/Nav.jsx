@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
+import IconSite from "../Images/icon.png";
 
 export default class Nav extends Component {
   render() {
     return (
       <nav>
-        <ul>
-          <li>Start</li>
-        </ul>
+        <img src={IconSite} alt="Ico" width={50} />
+        <center><h1>Naval warships</h1></center>
       </nav>
     )
   }

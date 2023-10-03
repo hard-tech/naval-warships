@@ -4,7 +4,7 @@ export default class Footer extends Component {
   render() {
     return (
       <div>
-        My Footer
+        Fait par Ahmad Jaber, Nicolas Tenneguin, Mathias Ghanem, Alexis Godet
       </div>
     )
   }
