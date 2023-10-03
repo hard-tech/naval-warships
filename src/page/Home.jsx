@@ -21,7 +21,6 @@ export default class Home extends Component {
           <h1><Link to="/Game">
             <button>Start game</button>
             </Link></h1>
-          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         </center>
         <Footer />
       </div>
