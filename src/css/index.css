@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
 body{
     background: linear-gradient(180.4deg, #98E0FF 0.34%, #4537E9 99.65%) no-repeat;
-
+    font-family: 'Itim', cursive;
+    box-sizing: border-box;
 }
