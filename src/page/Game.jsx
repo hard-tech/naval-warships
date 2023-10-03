@@ -8,7 +8,7 @@ export default class Game extends Component {
       <div>
         <h1>Table de Jeux</h1>
         <p>
-          Ici commence votre jeux !!!
+          Ici commence votre jeux !!! feur
         </p>
       </div>
     )
