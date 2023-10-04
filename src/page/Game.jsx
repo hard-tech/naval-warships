@@ -35,6 +35,32 @@ const playerNum = localStorage.playerNum;
 var PinedX, PinedY;
 
 function Game() {
+
+
+  // const [tableData, setTableData] = useState(
+  //   Array.from({ length: 10 }, () => Array(10).fill(""))
+  // );
+
+  // // Utilisez l'état pour tablePin
+  // const [tablePin, setTablePin] = useState([]);
+
+  // function PinThis(x, y) {
+  //   // Mettez à jour la copie du tableau en fonction des coordonnées x et y
+  //   const coordinate = `${x}-${y}`;
+
+  //   if (tablePin.includes(coordinate)) {
+  //     alert(`Les coordonnées du drapeau pour x:${x} et y:${y} existent déjà.`);
+  //   } else {
+  //     // Utilisez setTablePin pour mettre à jour le tableau d'états
+  //     setTablePin((prevTablePin) => [...prevTablePin, coordinate]);
+  //   }
+
+  //   // ... (le reste de votre code)
+  // }
+
+  // // ... (le reste de votre code)
+
+
   const [tableData, setTableData] = useState(
     Array.from({ length: 10 }, () => Array(10).fill(""))
   );
