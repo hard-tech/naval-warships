@@ -1,4 +1,5 @@
 import React, { useEffect, useState, Component } from "react";
+import { Spinner } from "react-bootstrap";
 import {
   ref,
   set,
@@ -11,12 +12,15 @@ import {
   refFromURL,
   increment,
 } from "firebase/database";
+
 import { db } from "../config/config";
+import StatusOpponent from "./StatusOpponent";
 
 var InfoIsComplet,
   PlayerFound,
   Turn,
   MyTurn,
+  Winner,
   Opponent,
   CaseData,
   Class_Case1_1 = "Case1_1 ",
@@ -35,8 +39,8 @@ function FormConnect() {
   const [playCode, setPlayCode] = useState("");
   const [playerName, setplayerName] = useState("");
   const [playerNum, setplayerNum] = useState(1);
-  var [StatusText, setStatusText] = useState();
   var [GameStart, setGameStart] = useState(false);
+  var [StatusText, setStatusText] = useState();
   var [GameFinishP1, setGameFinishP1] = useState(false);
   var [GameFinishP2, setGameFinishP2] = useState(false);
   var [ShowTurn, setShowTurn] = useState({ name: "", number: 0 });
@@ -51,7 +55,7 @@ function FormConnect() {
   function Initial() {
     // Initialse au chargement du site la Phrase au milieux à l'état 1 donc pas d'info Rentré
     useEffect(() => {
-      // StatusOpponent(1);
+      StatusOpponent(1);
       setGameFinishP1(true);
       setGameFinishP2(true);
       // console.log(`Gamed Stat is : ${GameStart}`);
@@ -66,6 +70,7 @@ function FormConnect() {
       // alert("Yeap")
     }, []);
   }
+
 
   // const [currentPlayer, setCurrentPlayer] = useState("");
   // const [gameBoard, setGameBoard] = useState(Array(9).fill("free"));
@@ -162,15 +167,126 @@ function FormConnect() {
                           number: 1,
                         },
                         gameState: {
-                          0: [0, true],
-                          1: [0, true],
-                          2: [0, true],
-                          3: [0, true],
-                          4: [0, true],
-                          5: [0, true],
-                          6: [0, true],
-                          7: [0, true],
-                          8: [0, true],
+                          A: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          B: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          C: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          D: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          E: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          F: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          G: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          H: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          I: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          J: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
                         },
                         GameStart: true,
                         ValueInfo: {
@@ -193,20 +309,134 @@ function FormConnect() {
                           number: 1,
                         },
                         gameState: {
-                          0: [0, true],
-                          1: [0, true],
-                          2: [0, true],
-                          3: [0, true],
-                          4: [0, true],
-                          5: [0, true],
-                          6: [0, true],
-                          7: [0, true],
-                          8: [0, true],
+                          A: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          B: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          C: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          D: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          E: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          F: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          G: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          H: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          I: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
+                          J: {
+                            0: [0, ""],
+                            1: [0, ""],
+                            2: [0, ""],
+                            3: [0, ""],
+                            4: [0, ""],
+                            5: [0, ""],
+                            6: [0, ""],
+                            7: [0, ""],
+                            8: [0, ""],
+                            9: [0, ""],
+                          },
                         },
                         GameStart: true,
                         ValueInfo: {
                           GameFinish: false,
-                          NumberOfMovesToPlay: 0,
+                          NombreTirTouchéJoueur1: 21,
+                          NombreTirFaitJoueur1: 0,
+                          NombreTirTouchéJoueur2: 21,
+                          NombreTirFaitJoueur2: 0,
                         },
                       }
                     );
@@ -251,7 +481,7 @@ function FormConnect() {
             .then(() => {
               WaiteOpponent(playCode);
               console.log("Succses Send ;)");
-              // StatusOpponent(2);
+              StatusOpponent(2);
 
               document.querySelector("#Code").disabled = true;
               document.querySelector("#Name").disabled = true;
@@ -294,7 +524,7 @@ function FormConnect() {
         setGameStart(true);
         setGameFinishP1(false);
         setGameFinishP2(false);
-        // StatusOpponent(3);
+        StatusOpponent(3);
         // TakeTurnToPlay();
         // GameState();
         console.log(`Party Launch ! (GameStarted = ${GameStart} )`);
@@ -305,12 +535,161 @@ function FormConnect() {
           document.querySelector("#Name").disabled = true;
           document.querySelector("#Num").disabled = true;
           document.querySelector("#ConfBtn").classList.add("disabled");
-          // StatusOpponent(4);
+          StatusOpponent(4);
+
+          setTimeout(() => {
+            document.location.href="/Game";
+          }, 4000);
         }
         // ${GameInfo.turnIsTo}
       }
     });
   }
+
+
+  const ResetDating = () => {
+    if (localStorage.playCode && localStorage.playerName !== undefined) {
+      localStorage.removeItem("playCode");
+      localStorage.removeItem("playerName");
+
+      window.location.reload();
+    } else {
+      console.log("Nothing to delete ;) ");
+    }
+  };
+
+
+  // Afficher les info sur l'avancement de la recherche de partie //
+  function InfoText1() {
+    // Affiche les instruction que le joueur doit suivre //
+    return (
+      <div>
+        <h3>
+          Please <b>{playerName}</b> enter info to connect with your friend.
+        </h3>
+      </div>
+    );
+  }
+  
+  function InfoText2() {
+    // Affiche les instruction que le joueur doit suivre //
+    return (
+      <h3 className=" d-flex flex-column align-items-center justify-content-center align-content-center animate__animated animate__rotateIn">
+        <span className="pb-3">
+          Hi, <b>{playerName}</b> your opponent search you please waite him.
+        </span>
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </h3>
+    );
+  }
+  
+  function InfoText3() {
+    // Affiche les instruction que le joueur doit suivre //
+    return (
+      <div>
+        <h3 id="InfoText3" className="animate__animated animate__heartBeat">
+          Hey, <b>{playerName}</b> we foud your opponent, it's <b>{Opponent}</b> .
+        </h3>
+      </div>
+    );
+  }
+  
+  function InfoText5() {
+    // Affiche le Vainqueur ! //
+  
+    // Récuper le nom du vainqueur
+    // get(ref(db, `Games/CodeToPlay_${playCode}/GameInfo/gameState`)).then((snapshot) => {
+      
+    // })
+  
+    // Qui est le vainqueur ! //
+    setGameFinishP1(true)
+    if(Winner === playerNum){
+      return (
+        <div>
+          <h3 id="InfoText3" className="animate__animated animate__infinite animate__pulse">
+            Well done, <b className="InfoWinner Winner">{playerName}</b> you win against <b>{Opponent}</b>.
+          </h3>
+        </div>
+      );
+    }
+    if(Winner !== playerNum && Winner !== ' no one '){
+      return (
+        <div>
+          <h3 id="InfoText3" className="animate__animated animate__infinite animate__pulse">
+            Sorry, <b className="InfoWinner Losser">{playerName}</b> you lost to <b>{Opponent}</b>.
+          </h3>
+        </div>
+      );
+    }else{
+      return (
+        <div>
+          <h3 id="InfoText3" className="animate__animated animate__swing">
+            GGs, <b>{playerName}</b> and <b>{Opponent}</b> good game but there is a draw !
+          </h3>
+        </div>
+      );
+    }
+  
+  
+  }
+  
+  
+  function StatusOpponent(StatutNum) {
+    // Vérifi le État du Jeux de jeux //
+    if (StatutNum === 1) {
+      setStatusText(<InfoText1 />);
+    }
+    // Vérifi le État du Jeux de jeux //
+    if (StatutNum === 2) {
+      setStatusText(<InfoText2 />);
+    }
+    // Vérifi le État du Jeux de jeux //
+    if (StatutNum === 3) {
+      setStatusText(<InfoText3 />);
+    }
+    if (StatutNum === 4) {
+      document
+        .querySelector(".InfoCard")
+        .classList.add(
+          "animate__delay-4s",
+          "animate__animated",
+          "animate__zoomOutDown"
+        );
+    }
+    // Vérifi le État du Jeux de jeux //
+    if (StatutNum === 5) {
+      InfoText5()
+      setStatusText(<InfoText5 />);      
+  
+      document.querySelector(".InfoCard")
+      .classList.remove(
+        "animate__delay-4s",
+        "animate__animated",
+        "animate__zoomOutDown"
+      );
+  
+      document.querySelector(".InfoCard")
+      .classList.add(
+        "animate__animated",
+        "animate__fadeInUp",
+        "animate__fast"
+      );
+    }
+  }
+  
+    function InfoCard() {
+      return (
+        <div className="">
+          opponent Info :
+          <div className=" border border-2 p-4 m-2 rounded border-light">
+            {StatusText}
+          </div>
+        </div>
+      );
+    }
 
   return (
     <form
@@ -370,9 +749,22 @@ function FormConnect() {
           </div>
         </div>
       </div>
-      <button type="submit" className="btn btn-primary mx-3 my-2" id="ConfBtn">
-        <b className="m-1">Confirm</b>
-      </button>
+      <div>
+        <button type="submit" className="btn btn-primary mx-3 my-2" id="ConfBtn">
+          <b className="m-1">Confirm</b>
+        </button>
+        <button
+          type="submit"
+          className="btn btn-danger mx-3"
+          onClick={() => ResetDating()}
+        >
+          Reset saved data
+        </button>
+      </div>
+
+      <div className="InfoCard">
+        <InfoCard />
+      </div>
     </form>
   );
 }
