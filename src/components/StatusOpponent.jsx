@@ -18,9 +18,9 @@ import turn from "../function/TurnToPlay";
 
 function StatusOpponent(){
 
-const playCode = localStorage.playCode;
-const playerName = localStorage.playerName;
-const playerNum = localStorage.playerNum;
+  const playCode = localStorage.playCode;
+  const playerName = localStorage.playerName;
+  const playerNum = localStorage.playerNum;
 
 // const [playCode, setPlayCode] = useState("");
 // const [playerName, setplayerName] = useState("");

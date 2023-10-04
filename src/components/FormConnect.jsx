@@ -291,54 +291,78 @@ function FormConnect() {
                         CoordinatedShips:{
                           ShipsPlayer1:{
                             Ship1S2:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship1S3:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship1S4:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship1S5:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship2S3:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship2S4:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             }
                           },
                           ShipsPlayer2:{
                             Ship1S2:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship1S3:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship1S4:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship1S5:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship2S3:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship2S4:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             }
                           },
                         },
@@ -487,54 +511,78 @@ function FormConnect() {
                         CoordinatedShips:{
                           ShipsPlayer1:{
                             Ship1S2:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship1S3:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship1S4:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship1S5:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship2S3:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship2S4:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             }
                           },
                           ShipsPlayer2:{
                             Ship1S2:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship1S3:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship1S4:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship1S5:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship2S3:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             },
                             Ship2S4:{
-                              x:null,
-                              y:null,
+                              xA:null,
+                              yA:null,
+                              xB:null,
+                              yB:null
                             }
                           },
                         },

@@ -64,7 +64,6 @@ button{
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
     left: 1rem;
 }
 #titleBoat h3{
