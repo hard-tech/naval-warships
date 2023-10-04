@@ -6,6 +6,12 @@ import FormConnect from '../components/FormConnect';
 
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import Bateaux1S2 from "../Images/EnsembleDesBateaux/bateaux-1_Size-2.png";
+import Bateaux1S3 from "../Images/EnsembleDesBateaux/bateaux-1_Size-3.png";
+import Bateaux1S4 from "../Images/EnsembleDesBateaux/bateaux-1_Size-4.png";
+import Bateaux1S5 from "../Images/EnsembleDesBateaux/bateaux-1_Size-5.png";
+import Bateaux2S3 from "../Images/EnsembleDesBateaux/bateaux-2_Size-3.png";
+import Bateaux2S4 from "../Images/EnsembleDesBateaux/bateaux-2_Size-4.png";
 
 export default class Game extends Component {
     render() {
@@ -18,15 +24,17 @@ export default class Game extends Component {
                         <div className="d-flex align-items-center flex-column w40">
                         
                         <div className='d-flex blocBoat'>
-                            <section id="boxBoat">
+                            <div id='titleBoat'>
                                 <h3>Placez vos bateaux</h3>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </section>
+                                <section id="boxBoat">
+                                    <img src={Bateaux1S2} alt="#"/>
+                                    <img src={Bateaux1S3} alt="#"/>
+                                    <img src={Bateaux1S4} alt="#"/>
+                                    <img src={Bateaux1S5} alt="#"/>
+                                    <img src={Bateaux2S3} alt="#"/>
+                                    <img src={Bateaux2S4} alt="#"/>
+                                </section>
+                            </div>
                             <div id='center'>
                             <h2>Ma carte</h2>
                                 <table>

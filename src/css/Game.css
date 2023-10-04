@@ -14,6 +14,7 @@ main section{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin: 20px;
 }
 #center h2{
     text-align: center; 
@@ -37,12 +38,11 @@ table {
 }
 th, td {
     border: 2px solid black;
-    padding: 10px;
+    padding: 6px;
     text-align: center;
 }
 td{
-    width: 45px;
-    height: 40px;
+    width: 38px;
 }
 thead tr th:first-of-type{
     border: none;
@@ -50,13 +50,31 @@ thead tr th:first-of-type{
 button{
     text-align: center;
 }
+
 #boxBoat{
     background-color: white;
-    border-radius: 5px;
-    height: 300px;
-    width: 200px;
+    border-radius: 0 0 5px 5px;
     text-align: center;
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+    margin: 0;
+}
+#titleBoat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
-    left: 0;
-    margin: 8px;
+    left: 1rem;
+}
+#titleBoat h3{
+    border-radius: 5px 5px 0 0;
+    margin: 0;
+    border: none;
+    padding: 10px;
+    border-bottom: 1px solid #000;
+    background-color: white;
+}
+#boxBoat img{
+    width: 216px;
 }
