@@ -2,10 +2,16 @@ import React, { Component } from 'react';
 
 import '../css/Game.css';
 
+import FormConnect from '../components/FormConnect';
+
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+
 export default class Game extends Component {
     render() {
         return (
             <div>
+                <Nav />
                 <h1>Table de Jeux</h1>
                 <main>
                     <section>
@@ -326,6 +332,7 @@ export default class Game extends Component {
                         </div>
                     </section>
                 </main>
+                <Footer />
             </div>
         )
     }

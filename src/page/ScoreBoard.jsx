@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 
 import '../css/ScoreBoard.css';
 
-import monImage from '../Images/bateauPizza.gif'
+import FormConnect from '../components/FormConnect';
+
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+
+import monGifPizza from '../Images/Gif/bateauPizza.gif'
 
 export default class ScoreBoard extends Component {
   render() {
     return (
       <div>
+        <Nav />
         <center>
           <h1>Score board</h1>
             <table className='table'>
@@ -43,10 +49,11 @@ export default class ScoreBoard extends Component {
               </tbody>
             </table>
             <h2>bravo à tous les 2, vous avez fait une super partie.</h2>
-            <img src={monImage}/>
+            <img src={monGifPizza}/>
             <h2>Cependant, nous sommes désolé de vous annoncer que les bateaux du perdant sont comme ceux ci </h2>
             <h2>Au plaisir de vous revoir </h2>
         </center>
+        <Footer />
       </div>
     )
   }
