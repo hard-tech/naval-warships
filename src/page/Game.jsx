@@ -9,7 +9,7 @@ export default class Game extends Component {
                 <h1>Table de Jeux</h1>
                 <main>
                     <section>
-                        <div className="d-flex align-items-center flex-column">
+                        <div className="d-flex align-items-center flex-column w40">
                         <h2>Ma carte</h2>
                         <table>
                             <thead>
@@ -160,8 +160,13 @@ export default class Game extends Component {
                                 </tr>
                             </tbody>
                         </table>
+                        <div>
+                            <button className='btnReady'>
+                                Prêt
+                            </button>
                         </div>
-                        <div className="d-flex align-items-center flex-column">
+                        </div>
+                        <div className="d-flex align-items-center flex-column w40">
                             <h2>Sonard</h2>
                         <table>
                             <thead>
@@ -313,6 +318,11 @@ export default class Game extends Component {
                                 </tr>
                             </tbody>
                         </table>
+                        <div>
+                            <button className='btnReady'>
+                                Prêt
+                            </button>
+                        </div>
                         </div>
                     </section>
                 </main>

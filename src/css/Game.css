@@ -14,24 +14,34 @@ main section{
     display: flex;
     justify-content: space-between;
 }
-section:first-child div{
+.w40{
     margin: 0 auto;
     width: 40%;
+}
+.btnReady{
+    background-color: white;
+    border-radius: 15px;
+    font-size: 20px;
+    padding: 15px 55px;
+    margin: 15px 0 47px;
+    border: 0;
 }
 table {
     border-collapse: collapse;
     margin: 30px 0px;
 }
-
 th, td {
-    border: 1px solid black;
-    padding: 10px;
+    border: 2px solid black;
+    padding: 10x;
     text-align: center;
 }
 td{
-    width: 40px;
-    height: 20px;
+    width: 45px;
+    height: 40px;
 }
 thead tr th:first-of-type{
     border: none;
+}
+button{
+    text-align: center;
 }

@@ -10,35 +10,35 @@ export default class ScoreBoard extends Component {
       <div>
         <center>
           <h1>Score board</h1>
-            <table>
-              <thead>
+            <table className='table'>
+              <thead className='thead'>
                 <tr>
                   <th colspan="3">résumé de la partie</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>liste des joueur</td>
-                  <td>joueur1</td>
-                  <td>joueur2</td>
+                  <td className='td'>liste des joueur</td>
+                  <td className='td'>joueur1</td>
+                  <td className='td'>joueur2</td>
                 </tr>
                 <tr>
-                  <td>vainqueur</td>
+                  <td className='td'>vainqueur</td>
                   {/*on cherche le vainqueur de la partie*/}
-                  <td>joueur 1 gagne ?</td>
-                  <td>joueur 2 gagne ?</td>
+                  <td className='td'>joueur 1 gagne ?</td>
+                  <td className='td'>joueur 2 gagne ?</td>
                 </tr>
                 <tr>
-                  <td>nombre de tire touché</td>
+                  <td className='td'>nombre de tire touché</td>
                   {/*on cherche le nombre de tir touché*/}
-                  <td>nombre de tire touché joueur1</td>
-                  <td>nombre de tire touché joueur2</td>
+                  <td className='td'>nombre de tire touché joueur1</td>
+                  <td className='td'>nombre de tire touché joueur2</td>
                 </tr>
                 <tr>
                   {/* // on cherche la précison de chaque joueur */}
-                  <td>précision des joueur</td>
-                  <td>précision joueur1</td>
-                  <td>précision joueur2</td>
+                  <td className='td'>précision des joueur</td>
+                  <td className='td'>précision joueur1</td>
+                  <td className='td'>précision joueur2</td>
                 </tr>
               </tbody>
             </table>
