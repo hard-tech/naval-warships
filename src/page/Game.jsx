@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Fonction_bateau from '../components/Fonction_bateaux';
 import '../css/Game.css';
 
 import FormConnect from '../components/FormConnect';
@@ -18,7 +18,6 @@ export default class Game extends Component {
         return (
             <div>
                 <Nav />
-                <h1>Table de Jeux</h1>
                 <main>
                     <section>
                         <div className="d-flex align-items-center flex-column w40">
@@ -26,6 +25,7 @@ export default class Game extends Component {
                         <div className='d-flex blocBoat'>
                             <div id='titleBoat'>
                                 <h3>Placez vos bateaux</h3>
+                                <Fonction_bateau></Fonction_bateau>
                                 <section id="boxBoat">
                                     <img src={Bateaux1S2} alt="#"/>
                                     <img src={Bateaux1S3} alt="#"/>
