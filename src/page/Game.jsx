@@ -13,6 +13,7 @@ import Bateaux1S5 from "../Images/EnsembleDesBateaux/bateaux-1_Size-5.png";
 import Bateaux2S3 from "../Images/EnsembleDesBateaux/bateaux-2_Size-3.png";
 import Bateaux2S4 from "../Images/EnsembleDesBateaux/bateaux-2_Size-4.png";
 
+
 function TablePlay() {
     return (
       <table id="finished" className="my-3">
@@ -380,10 +381,13 @@ function TablePlay() {
         </tbody>
       </table>
     );
-  }
+}
 
-export default class Game extends Component {
-    render() {
+function Game(){
+  const SetShips = (ShipsNumX) => {
+    alert("Voudevez selectioner l'endroit où le bateaux sera placer.")
+
+  }
         return (
             <div>
                 <Nav />
@@ -393,10 +397,10 @@ export default class Game extends Component {
                         
                         <div className='d-flex blocBoat'>
                             <div id='titleBoat'>
-                                <h3>Placez vos bateaux</h3>
+                                <h3 className='text-dark '>Placez vos bateaux</h3>
                                 <Fonction_bateau></Fonction_bateau>
                                 <section id="boxBoat">
-                                    <img src={Bateaux1S2} alt="#"/>
+                                    <img src={Bateaux1S2} onClick={() => SetShips(Bateaux1S2)} alt="#"/>
                                     <img src={Bateaux1S3} alt="#"/>
                                     <img src={Bateaux1S4} alt="#"/>
                                     <img src={Bateaux1S5} alt="#"/>
@@ -726,4 +730,4 @@ export default class Game extends Component {
             </div>
         )
     }
-}
+export default Game;
