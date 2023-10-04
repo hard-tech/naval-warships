@@ -89,7 +89,7 @@ function TablePlay() {
               onClick={() => Game('A',2)}
               className="p-4 border-4 border-light"
             >
-              <div id="Case1_1" className={Class_Case1_1}></div>
+              <div id=''></div>
             </td>
             <td
               id="2B"
