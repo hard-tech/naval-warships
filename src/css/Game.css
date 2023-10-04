@@ -14,7 +14,7 @@ main section{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 20px;
+    margin: 0 20px;
 }
 #center h2{
     text-align: center; 
