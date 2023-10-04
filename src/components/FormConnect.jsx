@@ -428,7 +428,10 @@ function FormConnect() {
                         GameStart: true,
                         ValueInfo: {
                           GameFinish: false,
-                          NumberOfMovesToPlay: 0,
+                          NombreTirTouchéJoueur1: 21,
+                          NombreTirFaitJoueur1: 0,
+                          NombreTirTouchéJoueur2: 21,
+                          NombreTirFaitJoueur2: 0       
                         },
                       }
                     );

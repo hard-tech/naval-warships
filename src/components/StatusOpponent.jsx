@@ -29,6 +29,49 @@ var [GameFinishP2, setGameFinishP2] = useState(false);
 var [ShowTurn, setShowTurn] = useState({ name: "", number: 0 });
 
 
+function StatusOpponent(StatutNum) {
+  // Vérifi le État du Jeux de jeux //
+  if (StatutNum === 1) {
+    setStatusText(<InfoText1 />);
+  }
+  // Vérifi le État du Jeux de jeux //
+  if (StatutNum === 2) {
+    setStatusText(<InfoText2 />);
+  }
+  // Vérifi le État du Jeux de jeux //
+  if (StatutNum === 3) {
+    setStatusText(<InfoText3 />);
+  }
+  if (StatutNum === 4) {
+    document
+      .querySelector(".InfoCard")
+      .classList.add(
+        "animate__delay-4s",
+        "animate__animated",
+        "animate__zoomOutDown"
+      );
+  }
+  // Vérifi le État du Jeux de jeux //
+  if (StatutNum === 5) {
+    InfoText5()
+    setStatusText(<InfoText5 />);      
+
+    document.querySelector(".InfoCard")
+    .classList.remove(
+      "animate__delay-4s",
+      "animate__animated",
+      "animate__zoomOutDown"
+    );
+
+    document.querySelector(".InfoCard")
+    .classList.add(
+      "animate__animated",
+      "animate__fadeInUp",
+      "animate__fast"
+    );
+  }
+}
+
   function InfoCard() {
     return (
       <div className="">
