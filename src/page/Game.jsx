@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import AudioPlayer from 'react-audio-player';
 import "../css/Game.css";
 import {
@@ -19,12 +19,13 @@ import FormConnect from "../components/FormConnect";
 
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import Bateaux1S2 from "../Images/EnsembleDesBateaux/bateaux-1_Size-2.png";
-import Bateaux1S3 from "../Images/EnsembleDesBateaux/bateaux-1_Size-3.png";
-import Bateaux1S4 from "../Images/EnsembleDesBateaux/bateaux-1_Size-4.png";
-import Bateaux1S5 from "../Images/EnsembleDesBateaux/bateaux-1_Size-5.png";
-import Bateaux2S3 from "../Images/EnsembleDesBateaux/bateaux-2_Size-3.png";
-import Bateaux2S4 from "../Images/EnsembleDesBateaux/bateaux-2_Size-4.png";
+
+import Ship1S2 from "../Images/EnsembleDesBateaux/bateaux-1_Size-2.png";
+import Ship1S3 from "../Images/EnsembleDesBateaux/bateaux-1_Size-3.png";
+import Ship1S4 from "../Images/EnsembleDesBateaux/bateaux-1_Size-4.png";
+import Ship1S5 from "../Images/EnsembleDesBateaux/bateaux-1_Size-5.png";
+import Ship2S3 from "../Images/EnsembleDesBateaux/bateaux-2_Size-3.png";
+import Ship2S4 from "../Images/EnsembleDesBateaux/bateaux-2_Size-4.png";
 
 import FlagIcon from "../Images/icon/Icon_Flag.png";
 
@@ -40,8 +41,12 @@ var PinedX,
   PinedY,
   SetShipsOn,
   ShipNumber = 1,
-  xA = 0,xB = 0,yA = 0,yB = 0,
-  shipStart, shipEnd;
+  xA = 0,
+  xB = 0,
+  yA = 0,
+  yB = 0,
+  shipStart,
+  shipEnd;
 
 function Game() {
   const [tableData, setTableData] = useState(
@@ -54,7 +59,7 @@ function Game() {
     PinedX = x;
     PinedY = y;
 
-    const coordinate = `${x}-${y}`; 
+    const coordinate = `${x}-${y}`;
 
     if (tablePin.includes(coordinate)) {
       // si il y a déjà un drapaux l'enlever du tablaux
@@ -123,42 +128,53 @@ function Game() {
   }
 
   function SetShips(ShipsX, Seiz) {
-      while(!(1 <= xA && xA <= 10 && 1 <= xB && xB <= 10 && 1 <= yA && yA <= 10 && 1 <= yB && yB <= 10)){
-        shipStart = prompt(
-          `Tapper le point (entre A&J et entre 1&10) de commencement de votre bateaux N°${ShipNumber} de taille ${Seiz}`
-        );
-        shipEnd = prompt(
-          `Tapper le point (entre A&J et entre 1&10) où Fini votre bateaux N°${ShipNumber} de taille ${Seiz} (Vertical et Horizontal seulement)`
-        );
-  
-        
-        xA = convertLettreToChiffre(extractLettre(shipStart));
-        yA = extractChiffre(shipStart);
-        xB = convertLettreToChiffre(extractLettre(shipEnd));
-        yB = extractChiffre(shipEnd);
-  
-        console.log(`${xA}, ${yA}, ${xB}, ${yB}`);
-        
-      }
+    while (
+      !(
+        1 <= xA &&
+        xA <= 10 &&
+        1 <= xB &&
+        xB <= 10 &&
+        1 <= yA &&
+        yA <= 10 &&
+        1 <= yB &&
+        yB <= 10
+      )
+    ) {
+      shipStart = prompt(
+        `Tapper le point (entre A&J et entre 1&10) de commencement de votre bateaux N°${ShipNumber} de taille ${Seiz}`
+      );
+      shipEnd = prompt(
+        `Tapper le point (entre A&J et entre 1&10) où Fini votre bateaux N°${ShipNumber} de taille ${Seiz} (Vertical et Horizontal seulement)`
+      );
 
-      // Récuper XA et XB du ship en cour.
+      xA = convertLettreToChiffre(extractLettre(shipStart));
+      yA = extractChiffre(shipStart);
+      xB = convertLettreToChiffre(extractLettre(shipEnd));
+      yB = extractChiffre(shipEnd);
 
-      PrintShips(xA, yA, xB, yB, ShipsX, Seiz);
+      console.log(`${xA}, ${yA}, ${xB}, ${yB}`);
+    }
 
-      const updates = {};
-      updates[
-        `Games/CodeToPlay_${playCode}/GameInfo/CoordinatedShips/ShipsPlayer${playerNum}/${ShipsX}`
-      ] = 
-      {
-        xA: xA,
-        yA: yA,
-        xB: xB,
-        yB: yB,
-      };
-      update(ref(db), updates);
+    // Récuper XA et XB du ship en cour.
 
-        // remise à 0 des Cordonée du bateaux //
-        xA = 0;xB = 0;yA = 0;yB = 0
+    //PrintShips(xA, yA, xB, yB, ShipsX, Seiz);
+
+    const updates = {};
+    updates[
+      `Games/CodeToPlay_${playCode}/GameInfo/CoordinatedShips/ShipsPlayer${playerNum}/${ShipsX}`
+    ] = {
+      xA: xA,
+      yA: yA,
+      xB: xB,
+      yB: yB,
+    };
+    update(ref(db), updates);
+
+    // remise à 0 des Cordonée du bateaux //
+    xA = 0;
+    xB = 0;
+    yA = 0;
+    yB = 0;
   }
 
   function Flag() {
@@ -189,32 +205,32 @@ function Game() {
                 <h3 className="text-dark ">Placez vos bateaux</h3>
                 <section id="boxBoat">
                   <img
-                    src={Bateaux1S2}
+                    src={Ship1S2}
                     onClick={() => SetShips("Ship1S2", 2)}
                     alt="#"
                   />
                   <img
-                    src={Bateaux1S3}
+                    src={Ship1S3}
                     onClick={() => SetShips("Ship1S3", 3)}
                     alt="#"
                   />
-                                    <img
-                    src={Bateaux1S4}
+                  <img
+                    src={Ship1S4}
                     onClick={() => SetShips("Ship1S4", 4)}
                     alt="#"
                   />
-                                    <img
-                    src={Bateaux1S5}
+                  <img
+                    src={Ship1S5}
                     onClick={() => SetShips("Ship1S5", 5)}
                     alt="#"
                   />
-                                    <img
-                    src={Bateaux2S3}
+                  <img
+                    src={Ship2S3}
                     onClick={() => SetShips("Ship2S3", 3)}
                     alt="#"
                   />
-                                    <img
-                    src={Bateaux2S4}
+                  <img
+                    src={Ship2S4}
                     onClick={() => SetShips("Ship2S4", 4)}
                     alt="#"
                   />

@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function PrintShips(xA, yA, xB, yb, ShipsX, Seiz) {
-  // Affiche les bateaux dans les bonne case avec les bonnes images (Gestion de className)
-    
+function PrintShips(xA, yA, xB, yB, ShipsX, Seiz) {
+    // Code qui affiche les différent vateaux entre les deux point
 }
 
 export default PrintShips;
