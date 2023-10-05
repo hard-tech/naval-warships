@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import AudioPlayer from 'react-audio-player';
 import "../css/Game.css";
+import IconSite from "../Images/icon/Icon_Flag.png";
 import {
   ref,
   set,
@@ -30,8 +31,6 @@ import Ship2S4 from "../Images/EnsembleDesBateaux/bateaux-2_Size-4.png";
 import FlagIcon from "../Images/icon/Icon_Flag.png";
 
 import PrintShips from "../function/PrintShips";
-
-import Musique from "../music/JackSparrow.mp3";
 
 const playCode = localStorage.playCode;
 const playerName = localStorage.playerName;
@@ -87,20 +86,12 @@ function Game() {
 
   return (
     <div>
-    <div>
-        <AudioPlayer 
-          src={Musique}
-          autoPlay
-          loop
-          controls
-        />
-        Musique d'ambience
-    </div>
+
       <Nav />
       <main>
         <section>
           <div className="d-flex align-items-center flex-column w40">
-            <h2>Taper sur les 100 cases avant votre Adversaire !</h2>
+            <h2><span> <img src={IconSite} alt="Ico" id="flagIcon"/></span>Taper sur les 100 cases avant votre Adversaire !</h2>
             <table>
               <thead>
                 <tr>

@@ -41,12 +41,12 @@ table {
     margin: 30px 0px;
 }
 th, td {
-    border: 2px solid black;
-    padding: 6px;
+    border: 2px solid white;
+    padding: 10px;
     text-align: center;
 }
 td{
-    width: 38px;
+    width: 45px;
 }
 thead tr th:first-of-type{
     border: none;
@@ -54,30 +54,15 @@ thead tr th:first-of-type{
 button{
     text-align: center;
 }
-
-#boxBoat{
-    background-color: white;
-    border-radius: 0 0 5px 5px;
-    text-align: center;
-    display: flex;
-    padding: 15px;
-    flex-direction: column;
-    margin: 0;
-}
-#titleBoat{
+#audioBloc{
     display: flex;
     flex-direction: column;
     align-items: center;
-    left: 1rem;
 }
-#titleBoat h3{
-    border-radius: 5px 5px 0 0;
-    margin: 0;
-    border: none;
+#flagIcon{
+    width: 70px;
+    border-radius: 15px;
+    border: 2px solid white;
+    margin: 0 10px;
     padding: 10px;
-    border-bottom: 1px solid #000;
-    background-color: white;
-}
-#boxBoat img{
-    width: 216px;
 }
