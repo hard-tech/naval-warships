@@ -54,7 +54,6 @@ function FormConnect() {
       if (localStorage.playCode && localStorage.playerName !== undefined) {
         setPlayCode(localStorage.playCode);
         setplayerName(localStorage.playerName);
-        setplayerNum(localStorage.playerNum)
       } else {
         console.log("You never play ;)");
       }
