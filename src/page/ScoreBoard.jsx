@@ -9,6 +9,7 @@ import Footer from "../components/Footer";
 
 import monGifPizza from '../Images/Gif/bateauPizza.gif'
 
+let shoot1 = 4, shoot2 = 5;
 export default class ScoreBoard extends Component {
   render() {
     return (
@@ -36,8 +37,8 @@ export default class ScoreBoard extends Component {
                 <tr>
                   <td className='td'>nombre de tire touché</td>
                   {/*on cherche le nombre de tir touché*/}
-                  <td className='td'>{}</td>
-                  <td className='td'>{}</td>
+                  <td className='td'>{shoot1}</td>
+                  <td className='td'>{shoot2}</td>
                 </tr>
                 <tr>
                   {/* // on cherche la précison de chaque joueur */}
