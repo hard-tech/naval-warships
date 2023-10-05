@@ -29,22 +29,21 @@ export default class ScoreBoard extends Component {
                   <td className='td'>joueur2</td>
                 </tr>
                 <tr>
-                  <td className='td'>vainqueur</td>
                   {/*on cherche le vainqueur de la partie*/}
-                  <td className='td'>joueur 1 gagne ?</td>
-                  <td className='td'>joueur 2 gagne ?</td>
+                  <td className='td'>{}</td>
+                  <td className='td'>{}</td>
                 </tr>
                 <tr>
                   <td className='td'>nombre de tire touché</td>
                   {/*on cherche le nombre de tir touché*/}
-                  <td className='td'>nombre de tire touché joueur1</td>
-                  <td className='td'>nombre de tire touché joueur2</td>
+                  <td className='td'>{}</td>
+                  <td className='td'>{}</td>
                 </tr>
                 <tr>
                   {/* // on cherche la précison de chaque joueur */}
                   <td className='td'>précision des joueur</td>
-                  <td className='td'>précision joueur1</td>
-                  <td className='td'>précision joueur2</td>
+                  <td className='td'>{}</td>
+                  <td className='td'>{}</td>
                 </tr>
               </tbody>
             </table>
