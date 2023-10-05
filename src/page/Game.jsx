@@ -45,7 +45,8 @@ var PinedX,
   yA = 0,
   yB = 0,
   shipStart,
-  shipEnd;
+  shipEnd,
+  Afficher = false;
 
 function Game() {
   const [tableData, setTableData] = useState(
@@ -60,15 +61,37 @@ function Game() {
 
     const coordinate = `${x}-${y}`;
 
-    if (tablePin.includes(coordinate)) {
-      // si il y a déjà un drapaux l'enlever du tablaux
-      setTablePin((prevTablePin) =>
-        prevTablePin.filter((coord) => coord !== coordinate)
-      );
-    } else {
-      // Utilisez setTablePin pour mettre à jour le tableau d'états
-      setTablePin((prevTablePin) => [...prevTablePin, coordinate]);
-    }
+    get(ref(db, `Games/CodeToPlay_${playCode}/GameInfo/GameStatus/GameFinish`)).then((snapshot) => {
+      if(snapshot.exists()){
+        let data = snapshot.val()
+        if(!data){
+          if (tablePin.includes(coordinate)) {
+            // si il y a déjà un drapaux l'enlever du tablaux
+            setTablePin((prevTablePin) =>
+              prevTablePin.filter((coord) => coord !== coordinate));
+      
+              // Update Value incrémental //
+              let updates = {};
+              updates[
+                `Games/CodeToPlay_${playCode}/GameInfo/Counter/J${playerNum}`
+              ] = increment(-1);
+              update(ref(db), updates);
+          } else {
+            // Utilisez setTablePin pour mettre à jour le tableau d'états
+            setTablePin((prevTablePin) => [...prevTablePin, coordinate]);
+      
+              // Update Value décrémental //
+              const updates = {};
+              updates[
+                `Games/CodeToPlay_${playCode}/GameInfo/Counter/J${playerNum}`
+               ]= increment(1);
+              update(ref(db), updates);
+          }
+        }else{
+          alert("C'est déjà fini :) ")
+        }
+      }
+    })
 
     // alert(`Pin on X${PinedX+1} & Y${PinedY+1}`)
     console.log(tablePin);
@@ -83,6 +106,51 @@ function Game() {
       </div>
     );
   }
+
+  let Path = ref(db, `Games/CodeToPlay_${playCode}/GameInfo/Counter/`);
+  onValue(Path, (snapshot) => {
+    // Code éxecuter des deux coté lors d'une connection entre deux joueur :) //
+    console.log("Done 1");
+    if (snapshot.exists()) {
+      
+      let data = snapshot.val()
+      // console.log(data.J1);
+      // console.log(playerNum);
+      if(playerNum === '1' && data.J1 === 5){
+        // console.log("Donne 3")
+        // Update les data Victoire //
+        const updates = {};
+        updates[`Games/CodeToPlay_${playCode}/GameInfo/GameStatus/GameFinish`]= true;
+        updates[`Games/CodeToPlay_${playCode}/GameInfo/GameStatus/WinnerIs`]= playerName;
+        update(ref(db), updates);
+      }
+      if(playerNum === '2' && data.J2 === 5){
+        // console.log("Done 3")
+        // Update les data Victoire //
+        const updates = {};
+        updates[`Games/CodeToPlay_${playCode}/GameInfo/GameStatus/GameFinish`]= true;
+        updates[`Games/CodeToPlay_${playCode}/GameInfo/GameStatus/WinnerIs`]= playerName;
+        update(ref(db), updates);
+      }
+    }
+  });
+
+  Path = ref(db, `Games/CodeToPlay_${playCode}/GameInfo/GameStatus/GameFinish`);
+  onValue(Path, (snapshot) => {
+    if (snapshot.exists()) {
+      
+      let data = snapshot.val()
+      if(data){
+        if(!Afficher){
+          alert("Fin de la partie ! GG");
+          Afficher = true;
+        }
+        setTimeout(() => {
+          document.location.href="/ScoreBoard";
+        }, 3000);
+      }
+    }
+  });
 
   return (
     <div>
