@@ -843,8 +843,8 @@ function FormConnect() {
       onSubmit={SubmitForm}
       className="d-flex justify-content-center flex-column align-content-center align-items-center"
     >
-      <div className="my-3 d-flex flex-wrap justify-content-center">
-        <div className="d-flex align-items-center m-4 flex-wrap flex-column justify-content-center">
+      <div className="my-3 d-flex flex-wrap justify-content-center align-items-center ">
+        <div className="d-flex align-items-center m-4 flex-wrap flex-column justify-content-center ">
           <span className="mx-4 my-2">
             Game code is « <b>{playCode}</b> »
           </span>
