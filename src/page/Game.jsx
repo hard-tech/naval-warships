@@ -145,9 +145,6 @@ function Game() {
                 ))}
               </tbody>
             </table>
-            <div>
-              <button className="btnReady">Prêt</button>
-            </div>
           </div>
         </section>
       </main>
