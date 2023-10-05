@@ -14,6 +14,7 @@ export default class ScoreBoard extends Component {
     return (
       <div>
         <Nav />
+        <a href='/'>Home</a>
         <center>
           <h1>Score board</h1>
             <table className='table'>
