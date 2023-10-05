@@ -30,27 +30,12 @@ export default class ScoreBoard extends Component {
                 </tr>
                 <tr>
                   {/*on cherche le vainqueur de la partie*/}
-                  <td className='td'>{}</td>
-                  <td className='td'>{}</td>
-                </tr>
-                <tr>
-                  <td className='td'>nombre de tire touché</td>
-                  {/*on cherche le nombre de tir touché*/}
-                  <td className='td'>{}</td>
-                  <td className='td'>{}</td>
-                </tr>
-                <tr>
-                  {/* // on cherche la précison de chaque joueur */}
-                  <td className='td'>précision des joueur</td>
-                  <td className='td'>{}</td>
-                  <td className='td'>{}</td>
+                  <td className='td'>{1}</td>
+                  <td className='td'>{2}</td>
                 </tr>
               </tbody>
             </table>
             <h2>bravo à tous les 2, vous avez fait une super partie.</h2>
-            <img src={monGifPizza}/>
-            <h2>Cependant, nous sommes désolé de vous annoncer que les bateaux du perdant sont comme ceux ci </h2>
-            <h2>Au plaisir de vous revoir </h2>
         </center>
         <Footer />
       </div>
