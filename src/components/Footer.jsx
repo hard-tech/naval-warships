@@ -12,6 +12,7 @@ export default class Footer extends Component {
       <audio autoPlay loop style={audioStyle}>
         <source src={Musique} type="audio/mpeg" />
       </audio>
+      <h4 className='text-center' style={{marginTop:'37vw'}}>© 2022 Copyright by New-webTech whith (Nicolas & Alexis & Mathyas)</h4>
       {/* Le reste de votre contenu HTML/JSX */}
     </div>
     )
