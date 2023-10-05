@@ -14,8 +14,7 @@ export default class Home extends Component {
     return (
       <div>
         <Nav />
-        <img src={IconSite} alt="Ico" id="iconSite"/>
-          <h4>Règles : être le premier a remplir les 100 cases avec des drapeaux rien de plus simple</h4>
+          <h4>Le but, être le premier a remplir les 20 cases avec des drapeaux rien de plus simple</h4>
           <FormConnect />
         <Footer />
       </div>

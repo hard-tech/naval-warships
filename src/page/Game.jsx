@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect } from "react";
-import AudioPlayer from 'react-audio-player';
+import AudioPlayer from "react-audio-player";
 import "../css/Game.css";
 import IconSite from "../Images/icon/Icon_Flag.png";
 import {
@@ -61,37 +61,40 @@ function Game() {
 
     const coordinate = `${x}-${y}`;
 
-    get(ref(db, `Games/CodeToPlay_${playCode}/GameInfo/GameStatus/GameFinish`)).then((snapshot) => {
-      if(snapshot.exists()){
-        let data = snapshot.val()
-        if(!data){
+    get(
+      ref(db, `Games/CodeToPlay_${playCode}/GameInfo/GameStatus/GameFinish`)
+    ).then((snapshot) => {
+      if (snapshot.exists()) {
+        let data = snapshot.val();
+        if (!data) {
           if (tablePin.includes(coordinate)) {
             // si il y a déjà un drapaux l'enlever du tablaux
             setTablePin((prevTablePin) =>
-              prevTablePin.filter((coord) => coord !== coordinate));
-      
-              // Update Value incrémental //
-              let updates = {};
-              updates[
-                `Games/CodeToPlay_${playCode}/GameInfo/Counter/J${playerNum}`
-              ] = increment(-1);
-              update(ref(db), updates);
+              prevTablePin.filter((coord) => coord !== coordinate)
+            );
+
+            // Update Value incrémental //
+            let updates = {};
+            updates[
+              `Games/CodeToPlay_${playCode}/GameInfo/Counter/J${playerNum}`
+            ] = increment(-1);
+            update(ref(db), updates);
           } else {
             // Utilisez setTablePin pour mettre à jour le tableau d'états
             setTablePin((prevTablePin) => [...prevTablePin, coordinate]);
-      
-              // Update Value décrémental //
-              const updates = {};
-              updates[
-                `Games/CodeToPlay_${playCode}/GameInfo/Counter/J${playerNum}`
-               ]= increment(1);
-              update(ref(db), updates);
+
+            // Update Value décrémental //
+            const updates = {};
+            updates[
+              `Games/CodeToPlay_${playCode}/GameInfo/Counter/J${playerNum}`
+            ] = increment(1);
+            update(ref(db), updates);
           }
-        }else{
-          alert("C'est déjà fini :) ")
+        } else {
+          alert("C'est déjà fini :) ");
         }
       }
-    })
+    });
 
     // alert(`Pin on X${PinedX+1} & Y${PinedY+1}`)
     console.log(tablePin);
@@ -112,24 +115,29 @@ function Game() {
     // Code éxecuter des deux coté lors d'une connection entre deux joueur :) //
     console.log("Done 1");
     if (snapshot.exists()) {
-      
-      let data = snapshot.val()
+      let data = snapshot.val();
       // console.log(data.J1);
       // console.log(playerNum);
-      if(playerNum === '1' && data.J1 === 5){
+      if (playerNum === "1" && data.J1 === 20) {
         // console.log("Donne 3")
         // Update les data Victoire //
         const updates = {};
-        updates[`Games/CodeToPlay_${playCode}/GameInfo/GameStatus/GameFinish`]= true;
-        updates[`Games/CodeToPlay_${playCode}/GameInfo/GameStatus/WinnerIs`]= playerName;
+        updates[
+          `Games/CodeToPlay_${playCode}/GameInfo/GameStatus/GameFinish`
+        ] = true;
+        updates[`Games/CodeToPlay_${playCode}/GameInfo/GameStatus/WinnerIs`] =
+          playerName;
         update(ref(db), updates);
       }
-      if(playerNum === '2' && data.J2 === 5){
+      if (playerNum === "2" && data.J2 === 20) {
         // console.log("Done 3")
         // Update les data Victoire //
         const updates = {};
-        updates[`Games/CodeToPlay_${playCode}/GameInfo/GameStatus/GameFinish`]= true;
-        updates[`Games/CodeToPlay_${playCode}/GameInfo/GameStatus/WinnerIs`]= playerName;
+        updates[
+          `Games/CodeToPlay_${playCode}/GameInfo/GameStatus/GameFinish`
+        ] = true;
+        updates[`Games/CodeToPlay_${playCode}/GameInfo/GameStatus/WinnerIs`] =
+          playerName;
         update(ref(db), updates);
       }
     }
@@ -138,15 +146,14 @@ function Game() {
   Path = ref(db, `Games/CodeToPlay_${playCode}/GameInfo/GameStatus/GameFinish`);
   onValue(Path, (snapshot) => {
     if (snapshot.exists()) {
-      
-      let data = snapshot.val()
-      if(data){
-        if(!Afficher){
+      let data = snapshot.val();
+      if (data) {
+        if (!Afficher) {
           alert("Fin de la partie ! GG");
           Afficher = true;
         }
         setTimeout(() => {
-          document.location.href="/ScoreBoard";
+          document.location.href = "/ScoreBoard";
         }, 3000);
       }
     }
@@ -154,12 +161,17 @@ function Game() {
 
   return (
     <div>
-
       <Nav />
       <main>
         <section>
           <div className="d-flex align-items-center flex-column w40">
-            <h2><span> <img src={IconSite} alt="Ico" id="flagIcon"/></span>Taper sur les 100 cases avant votre Adversaire !</h2>
+            <h2>
+              <span>
+                {" "}
+                <img src={IconSite} alt="Ico" id="flagIcon" />
+              </span>
+              Taper sur 20 cases avant votre Adversaire !
+            </h2>
             <table>
               <thead>
                 <tr>

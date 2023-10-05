@@ -1,32 +1,39 @@
-h1{
+h1 {
     text-align: center;
 }
-main section{
+
+main section {
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
 }
-.w40{
-  margin: 6px;
+
+.w40 {
+    margin: 6px;
 
 }
-#center{
+
+#center {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: 0 20px;
 }
-#center h2{
-    text-align: center; 
- }
- .blocBoat{
+
+#center h2 {
+    text-align: center;
+}
+
+.blocBoat {
     align-items: center;
- }
- #textRules{
+}
+
+#textRules {
     text-align: center;
     margin: 0;
- }
-.btnReady{
+}
+
+.btnReady {
     background-color: white;
     border-radius: 15px;
     font-size: 20px;
@@ -36,30 +43,37 @@ main section{
     text-align: center;
     width: 150px;
 }
+
 table {
     border-collapse: collapse;
     margin: 30px 0px;
 }
+
 th, td {
     border: 2px solid white;
     padding: 10px;
     text-align: center;
 }
-td{
+
+td {
     width: 45px;
 }
-thead tr th:first-of-type{
+
+thead tr th:first-of-type {
     border: none;
 }
-button{
+
+button {
     text-align: center;
 }
-#audioBloc{
+
+#audioBloc {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-#flagIcon{
+
+#flagIcon {
     width: 70px;
     border-radius: 15px;
     border: 2px solid white;

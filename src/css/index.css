@@ -5,4 +5,11 @@ body{
     font-family: 'Itim', cursive;
     box-sizing: border-box;
     color: whitesmoke;
+
+    margin-bottom: 35vh;
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }
