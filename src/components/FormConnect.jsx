@@ -290,6 +290,8 @@ function FormConnect() {
 
   const ResetDating = () => {
     if (localStorage.playCode && localStorage.playerName !== undefined) {
+
+
       localStorage.removeItem("playCode");
       localStorage.removeItem("playerName");
 
