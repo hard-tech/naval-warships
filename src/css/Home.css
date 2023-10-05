@@ -1,3 +1,7 @@
 button{
     background-color: aqua;
 }
+#ConfBtn{
+    background-color: white;
+    color: black;
+}

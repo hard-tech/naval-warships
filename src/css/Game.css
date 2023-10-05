@@ -22,6 +22,10 @@ main section{
  .blocBoat{
     align-items: center;
  }
+ #textRules{
+    text-align: center;
+    margin: 0;
+ }
 .btnReady{
     background-color: white;
     border-radius: 15px;

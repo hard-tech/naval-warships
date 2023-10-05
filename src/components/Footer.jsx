@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 export default class Footer extends Component {
   render() {
     return (
-      <div>
+      <p className='mt-3 ms-3'>
         Fait par Ahmad Jaber, Nicolas Tenneguin, Mathias Ghanem, Alexis Godet
-      </div>
+      </p>
     )
   }
 }
