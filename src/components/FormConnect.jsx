@@ -61,7 +61,6 @@ function FormConnect() {
     }, []);
   }
 
-
   // const [currentPlayer, setCurrentPlayer] = useState("");
   // const [gameBoard, setGameBoard] = useState(Array(9).fill("free"));
   // const [gamePlayed, setGamePlayed] = useState(0);
@@ -152,15 +151,15 @@ function FormConnect() {
                           player1: response.playerName,
                           player2: playerName,
                         },
-                        Counter:{
-                          J1:0,
-                          J2:0
+                        Counter: {
+                          J1: 0,
+                          J2: 0,
                         },
                         GameStart: true,
                         GameStatus: {
                           GameFinish: false,
-                          WinnerIs: '',
-                        }
+                          WinnerIs: "",
+                        },
                       }
                     );
                   } else {
@@ -172,15 +171,15 @@ function FormConnect() {
                           player1: playerName,
                           player2: response.playerName,
                         },
-                        Counter:{
-                          J1:0,
-                          J2:0
+                        Counter: {
+                          J1: 0,
+                          J2: 0,
                         },
                         GameStart: true,
                         GameStatus: {
                           GameFinish: false,
-                          WinnerIs: '',
-                        }
+                          WinnerIs: "",
+                        },
                       }
                     );
                   }
@@ -281,14 +280,13 @@ function FormConnect() {
           StatusOpponent(4);
 
           setTimeout(() => {
-            document.location.href="/Game";
+            document.location.href = "/Game";
           }, 4000);
         }
         // ${GameInfo.turnIsTo}
       }
     });
   }
-
 
   const ResetDating = () => {
     if (localStorage.playCode && localStorage.playerName !== undefined) {
@@ -301,7 +299,6 @@ function FormConnect() {
     }
   };
 
-
   // Afficher les info sur l'avancement de la recherche de partie //
   function InfoText1() {
     // Affiche les instruction que le joueur doit suivre //
@@ -313,7 +310,7 @@ function FormConnect() {
       </div>
     );
   }
-  
+
   function InfoText2() {
     // Affiche les instruction que le joueur doit suivre //
     return (
@@ -327,59 +324,66 @@ function FormConnect() {
       </h3>
     );
   }
-  
+
   function InfoText3() {
     // Affiche les instruction que le joueur doit suivre //
     return (
       <div>
         <h3 id="InfoText3" className="animate__animated animate__heartBeat">
-          Hey, <b>{playerName}</b> we foud your opponent, it's <b>{Opponent}</b> .
+          Hey, <b>{playerName}</b> we foud your opponent, it's <b>{Opponent}</b>{" "}
+          .
         </h3>
       </div>
     );
   }
-  
+
   function InfoText5() {
     // Affiche le Vainqueur ! //
-  
+
     // Récuper le nom du vainqueur
     // get(ref(db, `Games/CodeToPlay_${playCode}/GameInfo/gameState`)).then((snapshot) => {
-      
+
     // })
-  
+
     // Qui est le vainqueur ! //
-    setGameFinishP1(true)
-    if(Winner === playerNum){
+    setGameFinishP1(true);
+    if (Winner === playerNum) {
       return (
         <div>
-          <h3 id="InfoText3" className="animate__animated animate__infinite animate__pulse">
-            Well done, <b className="InfoWinner Winner">{playerName}</b> you win against <b>{Opponent}</b>.
+          <h3
+            id="InfoText3"
+            className="animate__animated animate__infinite animate__pulse"
+          >
+            Well done, <b className="InfoWinner Winner">{playerName}</b> you win
+            against <b>{Opponent}</b>.
           </h3>
         </div>
       );
     }
-    if(Winner !== playerNum && Winner !== ' no one '){
+    if (Winner !== playerNum && Winner !== " no one ") {
       return (
         <div>
-          <h3 id="InfoText3" className="animate__animated animate__infinite animate__pulse">
-            Sorry, <b className="InfoWinner Losser">{playerName}</b> you lost to <b>{Opponent}</b>.
+          <h3
+            id="InfoText3"
+            className="animate__animated animate__infinite animate__pulse"
+          >
+            Sorry, <b className="InfoWinner Losser">{playerName}</b> you lost to{" "}
+            <b>{Opponent}</b>.
           </h3>
         </div>
       );
-    }else{
+    } else {
       return (
         <div>
           <h3 id="InfoText3" className="animate__animated animate__swing">
-            GGs, <b>{playerName}</b> and <b>{Opponent}</b> good game but there is a draw !
+            GGs, <b>{playerName}</b> and <b>{Opponent}</b> good game but there
+            is a draw !
           </h3>
         </div>
       );
     }
-  
-  
   }
-  
-  
+
   function StatusOpponent(StatutNum) {
     // Vérifi le État du Jeux de jeux //
     if (StatutNum === 1) {
@@ -404,35 +408,37 @@ function FormConnect() {
     }
     // Vérifi le État du Jeux de jeux //
     if (StatutNum === 5) {
-      InfoText5()
-      setStatusText(<InfoText5 />);      
-  
-      document.querySelector(".InfoCard")
-      .classList.remove(
-        "animate__delay-4s",
-        "animate__animated",
-        "animate__zoomOutDown"
-      );
-  
-      document.querySelector(".InfoCard")
-      .classList.add(
-        "animate__animated",
-        "animate__fadeInUp",
-        "animate__fast"
-      );
+      InfoText5();
+      setStatusText(<InfoText5 />);
+
+      document
+        .querySelector(".InfoCard")
+        .classList.remove(
+          "animate__delay-4s",
+          "animate__animated",
+          "animate__zoomOutDown"
+        );
+
+      document
+        .querySelector(".InfoCard")
+        .classList.add(
+          "animate__animated",
+          "animate__fadeInUp",
+          "animate__fast"
+        );
     }
   }
-  
-    function InfoCard() {
-      return (
-        <div className="">
-          opponent Info :
-          <div className=" border border-2 p-4 m-2 rounded border-light">
-            {StatusText}
-          </div>
+
+  function InfoCard() {
+    return (
+      <div className="">
+        opponent Info :
+        <div className=" border border-2 p-4 m-2 rounded border-light">
+          {StatusText}
         </div>
-      );
-    }
+      </div>
+    );
+  }
 
   return (
     <form
@@ -493,7 +499,11 @@ function FormConnect() {
         </div>
       </div>
       <div>
-        <button type="submit" className="btn btn-primary mx-3 my-2" id="ConfBtn">
+        <button
+          type="submit"
+          className="btn btn-primary mx-3 my-2"
+          id="ConfBtn"
+        >
           <b className="m-1">Confirm</b>
         </button>
         <button
