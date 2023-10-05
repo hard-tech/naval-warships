@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+import AudioPlayer from 'react-audio-player';
 import "../css/Game.css";
 import {
   ref,
@@ -28,6 +29,8 @@ import Bateaux2S4 from "../Images/EnsembleDesBateaux/bateaux-2_Size-4.png";
 import FlagIcon from "../Images/icon/Icon_Flag.png";
 
 import PrintShips from "../function/PrintShips";
+
+import Musique from "../music/JackSparrow.mp3";
 
 const playCode = localStorage.playCode;
 const playerName = localStorage.playerName;
@@ -168,6 +171,15 @@ function Game() {
 
   return (
     <div>
+    <div>
+        <AudioPlayer 
+          src={Musique}
+          autoPlay
+          loop
+          controls
+        />
+        Musique d'ambience
+    </div>
       <Nav />
       <main>
         <section>
