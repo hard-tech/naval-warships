@@ -100,7 +100,7 @@ function Game() {
       <main>
         <section>
           <div className="d-flex align-items-center flex-column w40">
-            <h2>Sonard</h2>
+            <h2>Taper sur les 100 cases avant votre Adversaire !</h2>
             <table>
               <thead>
                 <tr>
