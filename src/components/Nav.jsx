@@ -5,7 +5,7 @@ export default class Nav extends Component {
   render() {
     return (
       <nav className='d-flex justify-content-around align-content-center align-items-center mb-5 mt-2'>
-        <img src={IconSite} alt="Ico" width={70} style={{border:'5px solid', borderRadius:'50%'}} />
+        <img src={IconSite} alt="Ico" width={70} style={{border:'5px solid', borderRadius:'15px', padding:"10px"}} />
       </nav>
     )
   }
