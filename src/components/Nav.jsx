@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import IconSite from "../Images/icon/icon.png";
+import IconSite from "../Images/icon/Icon_Flag.png";
 
 export default class Nav extends Component {
   render() {
