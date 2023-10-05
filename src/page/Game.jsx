@@ -51,7 +51,7 @@ function Game() {
     PinedX = x;
     PinedY = y;
 
-    const coordinate = `${x}-${y}`;
+    const coordinate = `${x}-${y}`; 
 
     if (tablePin.includes(coordinate)) {
       // si il y a déjà un drapaux l'enlever du tablaux
@@ -142,24 +142,17 @@ function Game() {
 
       PrintShips(xA, yA, xB, yB, ShipsX, Seiz);
 
-      set(
-        ref(
-          db,
-          `Games/CodeToPlay_${playCode}/CoordinatedShips/ShipsPlayer${playerNum}/${ShipsX}`
-        ),
-        {
-          xA: xA,
-          yA: yA,
-          xB: xB,
-          yB: yB,
-        }
-      )
-        .then(() => {
-          console.log("Succses Send ;)");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      const updates = {};
+      updates[
+        `Games/CodeToPlay_${playCode}/GameInfo/CoordinatedShips/ShipsPlayer${playerNum}/${ShipsX}`
+      ] = 
+      {
+        xA: xA,
+        yA: yA,
+        xB: xB,
+        yB: yB,
+      };
+      update(ref(db), updates);
 
         // remise à 0 des Cordonée du bateaux //
         xA = 0;xB = 0;yA = 0;yB = 0
@@ -190,7 +183,7 @@ function Game() {
                   />
                   <img
                     src={Bateaux1S3}
-                    onClick={() => SetShips("Ship1S2", 3)}
+                    onClick={() => SetShips("Ship1S3", 3)}
                     alt="#"
                   />
                                     <img

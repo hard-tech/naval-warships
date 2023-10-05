@@ -23,15 +23,6 @@ var InfoIsComplet,
   Winner,
   Opponent,
   CaseData,
-  Class_Case1_1 = "Case1_1 ",
-  Class_Case1_2 = "Case1_2 ",
-  Class_Case1_3 = "Case1_3 ",
-  Class_Case2_1 = "Case2_1 ",
-  Class_Case2_2 = "Case2_2 ",
-  Class_Case2_3 = "Case2_3 ",
-  Class_Case3_1 = "Case3_1 ",
-  Class_Case3_2 = "Case3_2 ",
-  Class_Case3_3 = "Case3_3 ",
   NumberOfMovesToPlay = 0,
   Winer = null;
 
@@ -63,7 +54,7 @@ function FormConnect() {
       if (localStorage.playCode && localStorage.playerName !== undefined) {
         setPlayCode(localStorage.playCode);
         setplayerName(localStorage.playerName);
-        // setplayerNum(localStorage.playerNum)
+        setplayerNum(localStorage.playerNum)
       } else {
         console.log("You never play ;)");
       }
@@ -104,7 +95,7 @@ function FormConnect() {
       );
       localStorage["playCode"] = playCode;
       localStorage["playerName"] = playerName;
-      // localStorage["playerNum"] = playerNum;
+      localStorage["playerNum"] = playerNum;
       FoundOpponent([playCode, playerName, playerNum]);
     } else {
       alert(
@@ -291,78 +282,78 @@ function FormConnect() {
                         CoordinatedShips:{
                           ShipsPlayer1:{
                             Ship1S2:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship1S3:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship1S4:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship1S5:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship2S3:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship2S4:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             }
                           },
                           ShipsPlayer2:{
                             Ship1S2:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship1S3:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship1S4:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship1S5:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship2S3:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship2S4:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             }
                           },
                         },
@@ -511,78 +502,78 @@ function FormConnect() {
                         CoordinatedShips:{
                           ShipsPlayer1:{
                             Ship1S2:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship1S3:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship1S4:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship1S5:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship2S3:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship2S4:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             }
                           },
                           ShipsPlayer2:{
                             Ship1S2:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship1S3:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship1S4:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship1S5:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship2S3:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             },
                             Ship2S4:{
-                              xA:null,
-                              yA:null,
-                              xB:null,
-                              yB:null
+                              'xA':0,
+                              'yA':0,
+                              'xB':0,
+                              'yB':0
                             }
                           },
                         },
