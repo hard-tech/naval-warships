@@ -36,7 +36,9 @@ const playerNum = localStorage.playerNum;
 var PinedX,
   PinedY,
   SetShipsOn,
-  ShipNumber = 1;
+  ShipNumber = 1,
+  xA = 0,xB = 0,yA = 0,yB = 0,
+  shipStart, shipEnd;
 
 function Game() {
   const [tableData, setTableData] = useState(
@@ -117,26 +119,28 @@ function Game() {
     }
   }
 
-  function SetShips(ShipsX) {
-    if (true) {
-      var shipStart = prompt(
-        `Tapper le point de commencement de votre bateaux N°${ShipNumber}`
-      );
-      var shipEnd = prompt(
-        `Tapper le point où Fini votre bateaux N°${ShipNumber} (Vertical et Horizontal seulement)`
-      );
-
-      ShipNumber++;
-
-      var xA = convertLettreToChiffre(extractLettre(shipStart));
-      var yA = extractChiffre(shipStart);
-      var xB = convertLettreToChiffre(extractLettre(shipEnd));
-      var yB = extractChiffre(shipEnd);
-      alert(`${xA}, ${xB}, ${yA}, ${yB}`);
+  function SetShips(ShipsX, Seiz) {
+      while(!(1 <= xA && xA <= 10 && 1 <= xB && xB <= 10 && 1 <= yA && yA <= 10 && 1 <= yB && yB <= 10)){
+        shipStart = prompt(
+          `Tapper le point (entre A&J et entre 1&10) de commencement de votre bateaux N°${ShipNumber} de taille ${Seiz}`
+        );
+        shipEnd = prompt(
+          `Tapper le point (entre A&J et entre 1&10) où Fini votre bateaux N°${ShipNumber} de taille ${Seiz} (Vertical et Horizontal seulement)`
+        );
+  
+        
+        xA = convertLettreToChiffre(extractLettre(shipStart));
+        yA = extractChiffre(shipStart);
+        xB = convertLettreToChiffre(extractLettre(shipEnd));
+        yB = extractChiffre(shipEnd);
+  
+        console.log(`${xA}, ${yA}, ${xB}, ${yB}`);
+        
+      }
 
       // Récuper XA et XB du ship en cour.
 
-      // PrintShips(xA, yA, xB, yB, ShipsX);
+      PrintShips(xA, yA, xB, yB, ShipsX, Seiz);
 
       set(
         ref(
@@ -152,14 +156,13 @@ function Game() {
       )
         .then(() => {
           console.log("Succses Send ;)");
-          alert("Succses Send ;)");
         })
         .catch((error) => {
           console.log(error);
         });
-    } else {
-      alert("Ce bateaux est déjà placer !");
-    }
+
+        // remise à 0 des Cordonée du bateaux //
+        xA = 0;xB = 0;yA = 0;yB = 0
   }
 
   function Flag() {
@@ -182,14 +185,34 @@ function Game() {
                 <section id="boxBoat">
                   <img
                     src={Bateaux1S2}
-                    onClick={() => SetShips("Ship1S2")}
+                    onClick={() => SetShips("Ship1S2", 2)}
                     alt="#"
                   />
-                  <img src={Bateaux1S3} alt="#" />
-                  <img src={Bateaux1S4} alt="#" />
-                  <img src={Bateaux1S5} alt="#" />
-                  <img src={Bateaux2S3} alt="#" />
-                  <img src={Bateaux2S4} alt="#" />
+                  <img
+                    src={Bateaux1S3}
+                    onClick={() => SetShips("Ship1S2", 3)}
+                    alt="#"
+                  />
+                                    <img
+                    src={Bateaux1S4}
+                    onClick={() => SetShips("Ship1S4", 4)}
+                    alt="#"
+                  />
+                                    <img
+                    src={Bateaux1S5}
+                    onClick={() => SetShips("Ship1S5", 5)}
+                    alt="#"
+                  />
+                                    <img
+                    src={Bateaux2S3}
+                    onClick={() => SetShips("Ship2S3", 3)}
+                    alt="#"
+                  />
+                                    <img
+                    src={Bateaux2S4}
+                    onClick={() => SetShips("Ship2S4", 4)}
+                    alt="#"
+                  />
                 </section>
               </div>
               <div id="center">
